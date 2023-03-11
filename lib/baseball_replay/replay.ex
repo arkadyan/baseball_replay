@@ -27,4 +27,24 @@ defmodule BaseballReplay.Replay do
       time_offset: DateTime.diff(replay_start_time, Game.start_time(game))
     }
   end
+
+  def in_progress(
+        %__MODULE__{game: game, replay_start_time: replay_start_time, time_offset: time_offset} =
+          replay,
+        current_time \\ DateTime.utc_now()
+      ) do
+    time_since_replay_start = DateTime.diff(current_time, replay_start_time)
+
+    relative_game_time =
+      game
+      |> Game.start_time()
+      |> DateTime.add(time_since_replay_start)
+
+    IO.inspect(relative_game_time, label: "relative_game_time")
+
+    %__MODULE__{
+      replay
+      | game: Game.in_progress(game, relative_game_time)
+    }
+  end
 end

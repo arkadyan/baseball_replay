@@ -10,7 +10,10 @@ defmodule BaseballReplayWeb.ReplayController do
   end
 
   def show(conn, _params) do
-    replay = mock_replay()
+    replay =
+      mock_replay()
+      |> Replay.in_progress()
+
     json(conn, replay)
   end
 

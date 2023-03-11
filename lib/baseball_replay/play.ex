@@ -55,4 +55,11 @@ defmodule BaseballReplay.Play do
 
   @spec start_time(t()) :: DateTime.t()
   def start_time(%__MODULE__{about: about}), do: About.start_time(about)
+
+  @spec end_time(t()) :: DateTime.t()
+  def end_time(%__MODULE__{play_end_time: play_end_time}), do: play_end_time
+
+  @spec before?(t(), DateTime.t()) :: boolean()
+  def before?(play, relative_game_time),
+    do: DateTime.compare(end_time(play), relative_game_time) == :lt
 end

@@ -44,4 +44,16 @@ defmodule BaseballReplay.Game do
   end
 
   def start_time(%__MODULE__{start_time: start_time}), do: start_time
+
+  @spec in_progress(t(), DateTime.t()) :: t()
+  def in_progress(%__MODULE__{all_plays: all_plays} = game, relative_game_time) do
+    filtered_plays =
+      all_plays
+      |> Enum.filter(&Play.before?(&1, relative_game_time))
+
+    %__MODULE__{
+      game
+      | all_plays: filtered_plays
+    }
+  end
 end
