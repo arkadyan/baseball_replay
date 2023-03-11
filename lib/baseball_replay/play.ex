@@ -5,6 +5,8 @@ defmodule BaseballReplay.Play do
 
   alias BaseballReplay.Play.{About, Count, Matchup, Result}
 
+  @derive Jason.Encoder
+
   defstruct [
     :result,
     :about,

@@ -2,6 +2,8 @@
 
 <%= for replay <- @replays do %>
   <div>
-    <div>Game <%= replay.game_id %> started at <%= DateTime.to_string(replay.replay_start_time) %></div>
+  <.link patch={~p"/api/v1/game/#{replay.game_id}/playByPlay"}>
+    Game <%= replay.game_id %> started at <%= DateTime.to_string(replay.replay_start_time) %>
+    </.link>
   </div>
 <% end %>

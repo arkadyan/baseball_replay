@@ -19,6 +19,7 @@ defmodule BaseballReplayWeb.Router do
 
     get("/", PageController, :home)
     resources("/replays", ReplayController, only: [:index])
+    get("/api/v1/game/:game_id/playByPlay", ReplayController, :show)
   end
 
   # Other scopes may use custom stacks.

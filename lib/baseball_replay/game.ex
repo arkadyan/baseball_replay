@@ -5,6 +5,8 @@ defmodule BaseballReplay.Game do
 
   alias BaseballReplay.Play
 
+  @derive Jason.Encoder
+
   defstruct [
     :start_time,
     :current_play,

@@ -1,6 +1,8 @@
 defmodule BaseballReplay.Replay do
   alias BaseballReplay.Game
 
+  @derive Jason.Encoder
+
   defstruct [
     :game_id,
     :game,
