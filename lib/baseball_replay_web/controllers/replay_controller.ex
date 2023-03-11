@@ -28,7 +28,7 @@ defmodule BaseballReplayWeb.ReplayController do
   end
 
   defp fixture_path(path) do
-    fixture_path = Path.expand("../../../test/support/fixtures", __DIR__)
+    fixture_path = Path.expand("../../../priv/play_by_play", __DIR__)
     Path.expand(path, fixture_path)
   end
 end
