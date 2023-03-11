@@ -1,4 +1,6 @@
 defmodule BaseballReplay.Play.Result do
+  @derive Jason.Encoder
+
   defstruct [
     :type,
     :event,

@@ -4,21 +4,24 @@ defmodule BaseballReplayWeb.ReplayController do
   alias BaseballReplay.{Game, Replay}
 
   def index(conn, _params) do
-    replays = mock_replays()
+    replays = [mock_replay()]
 
     render(conn, :index, replays: replays)
   end
 
-  defp mock_replays do
+  def show(conn, _params) do
+    replay = mock_replay()
+    json(conn, replay)
+  end
+
+  defp mock_replay do
     {:ok, game} =
       "715722-playByPlay.json"
       |> fixture_path()
       |> File.read!()
       |> Game.parse()
 
-    replay = Replay.new("715722", game, ~U[2023-03-11 18:00:00.000Z])
-
-    [replay]
+    Replay.new("715722", game, ~U[2023-03-11 20:00:00.000Z])
   end
 
   defp fixture_path(path) do

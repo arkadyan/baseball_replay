@@ -1,4 +1,6 @@
 defmodule BaseballReplay.Play.About do
+  @derive Jason.Encoder
+
   defstruct [
     :at_bat_index,
     :half_inning,
