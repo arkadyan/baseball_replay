@@ -6,7 +6,7 @@ defmodule BaseballReplayWeb.ReplayController do
   def index(conn, _params) do
     replays = [mock_replay()]
 
-    render(conn, :index, replays: replays)
+    render(conn, :index, replays: replays, page_title: "Replays")
   end
 
   def show(conn, _params) do
