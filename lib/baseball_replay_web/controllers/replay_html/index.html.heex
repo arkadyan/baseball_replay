@@ -1,0 +1,7 @@
+<h1 class="text-lg font-semibold leading-8 mb-8 text-zinc-800">Replays</h1>
+
+<%= for replay <- @replays do %>
+  <div>
+    <div>Game <%= replay.game_id %> started at <%= DateTime.to_string(replay.replay_start_time) %></div>
+  </div>
+<% end %>
