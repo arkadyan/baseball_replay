@@ -15,6 +15,8 @@ defmodule BaseballReplay.Play do
     :pitch_index,
     :action_index,
     :runner_index,
+    # :runners,
+    # :play_events,
     :play_end_time,
     :at_bat_index
   ]
