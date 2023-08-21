@@ -30,10 +30,10 @@ defmodule BaseballReplayWeb.ReplayController do
     Replay.new("715722", game, ~U[2023-03-11 20:00:00.000Z])
   end
 
-  defp fixture_path(path) do
-    fixture_path = Path.expand("../../../priv/play_by_play", __DIR__)
-    Path.expand(path, fixture_path)
-  end
+  # defp fixture_path(path) do
+  #   fixture_path = Path.expand("../../../priv/play_by_play", __DIR__)
+  #   Path.expand(path, fixture_path)
+  # end
 
   defp mock_data do
     """

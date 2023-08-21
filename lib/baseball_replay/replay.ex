@@ -41,6 +41,7 @@ defmodule BaseballReplay.Replay do
       |> DateTime.add(time_since_replay_start)
 
     IO.inspect(relative_game_time, label: "relative_game_time")
+    IO.inspect(time_offset, label: "time_offset")
 
     %__MODULE__{
       replay
