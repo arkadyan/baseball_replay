@@ -29,6 +29,7 @@ defmodule BaseballReplay.Play do
           pitch_index: [non_neg_integer()],
           action_index: [non_neg_integer()],
           runner_index: [non_neg_integer()],
+          runners: [Runner.t()]
           play_end_time: DateTime.t(),
           at_bat_index: non_neg_integer()
         }

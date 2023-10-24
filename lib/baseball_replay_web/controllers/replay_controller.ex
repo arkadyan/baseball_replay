@@ -27,7 +27,7 @@ defmodule BaseballReplayWeb.ReplayController do
       mock_data()
       |> Game.parse()
 
-    Replay.new("715722", game, ~U[2023-03-11 20:00:00.000Z])
+    Replay.new("715722", game, ~U[2023-08-20 23:00:00.000Z])
   end
 
   # defp fixture_path(path) do
